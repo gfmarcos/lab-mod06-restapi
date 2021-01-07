@@ -1,4 +1,24 @@
-export interface HotelEntityApi {
+export interface CharacterEntityApi {
+  id: string;
+  name: string;
+  status: string;
+  species: string;
+  type: string;
+  gender: string;
+  origin: {
+    name: string;
+    url: string;
+  };
+  location: {
+    name: string;
+    url: string;
+  };
+  image: string;
+  episode: string[];
+  url: string;
+  created: string;
+}
+/* interface HotelEntityApi {
   id: string;
   type: string;
   name: string;
@@ -35,3 +55,4 @@ export interface HotelEntityApi {
   tripAdvisorRating: number;
   tripAdvisorRatingUrl: string;
 }
+ */

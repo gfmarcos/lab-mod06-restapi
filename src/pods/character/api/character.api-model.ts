@@ -1,4 +1,25 @@
-export interface Hotel {
+export interface CharacterApi {
+  id: string;
+  name: string;
+  status: string;
+  species: string;
+  type: string;
+  gender: string;
+  origin: {
+    name: string;
+    url: string;
+  };
+  location: {
+    name: string;
+    url: string;
+  };
+  image: string;
+  episode: string[];
+  url: string;
+  created: string;
+}
+
+/* export interface Hotel {
   id: string;
   type: string;
   name: string;
@@ -35,3 +56,5 @@ export interface Hotel {
   tripAdvisorRating: number;
   tripAdvisorRatingUrl: string;
 }
+
+ */

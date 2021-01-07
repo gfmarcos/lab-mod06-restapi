@@ -6,48 +6,47 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
-import Avatar from '@material-ui/core/Avatar/Avatar';
 import IconButton from '@material-ui/core/IconButton/IconButton';
 import EditIcon from '@material-ui/icons/Edit';
-import DeleteIcon from '@material-ui/icons/Delete';
-import { HotelEntityVm } from '../hotel-collection.vm';
-import * as classes from './hotel-card.styles';
+import VisibilityIcon from '@material-ui/icons/Visibility';
+import { CharacterEntityVm } from '../character-collection.vm';
+import * as classes from './character-card.styles';
 
 interface Props {
-  hotel: HotelEntityVm;
+  character: CharacterEntityVm;
   onEdit: (id: string) => void;
   onDelete: (id: string) => void;
+  onView: (id: string) => void;
 }
 
-export const HotelCard: React.FunctionComponent<Props> = (props) => {
-  const { hotel, onEdit, onDelete } = props;
+export const CharacterCard: React.FunctionComponent<Props> = (props) => {
+  const { character, onEdit, onDelete, onView } = props;
 
   return (
     <Card>
       <CardHeader
-        avatar={<Avatar aria-label="Hotel">{hotel.rating}</Avatar>}
-        title={hotel.name}
-        subheader={hotel.address}
+        title={character.name}
+        subheader={character.gender}
       />
       <CardContent>
         <div className={classes.content}>
           <CardMedia
-            image={hotel.picture}
-            title={hotel.name}
+            image={character.image}
+            title={character.name}
             style={{ height: 0, paddingTop: '56.25%' }}
           />
-          <Typography variant="subtitle1" gutterBottom>
-            {hotel.description}
-          </Typography>
         </div>
       </CardContent>
       <CardActions>
-        <IconButton onClick={() => onEdit(hotel.id)}>
+      <IconButton onClick={() => onView(character.id)}>
+          <VisibilityIcon />
+        </IconButton>
+        <IconButton onClick={() => onEdit(character.id)}>
           <EditIcon />
         </IconButton>
-        <IconButton onClick={() => onDelete(hotel.id)}>
+{/*         <IconButton onClick={() => onDelete(hotel.id)}>
           <DeleteIcon />
-        </IconButton>
+        </IconButton> */}
       </CardActions>
     </Card>
   );
