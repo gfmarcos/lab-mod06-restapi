@@ -18,6 +18,7 @@ export const HotelContainer: React.FunctionComponent = (props) => {
   };
 
   const handleLoadHotel = async () => {
+    console.log('---------handleLoadHotel');
     const apiHotel = await api.getHotel(id);
     setHotel(mapHotelFromApiToVm(apiHotel));
   };
