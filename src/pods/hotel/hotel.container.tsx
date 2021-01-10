@@ -24,6 +24,8 @@ export const HotelContainer: React.FunctionComponent = (props) => {
   };
 
   React.useEffect(() => {
+    console.log("----------ID");
+    console.log(id);
     if (id) {
       handleLoadHotel();
     }
