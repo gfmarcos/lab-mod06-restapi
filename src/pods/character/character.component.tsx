@@ -26,12 +26,15 @@ interface Props {
 export const HotelComponent: React.FunctionComponent<Props> = (props) => {
   const { character } = props;
 
+  console.log("**********");
+  console.log(character)
+
   return (
     <>
       <Card className={classes.root}>
         <CardHeader
           title={character.name}
-          subheader="September 14, 2016"
+          subheader={character.gender}
         />
         <CardMedia
           image="/static/images/cards/paella.jpg"

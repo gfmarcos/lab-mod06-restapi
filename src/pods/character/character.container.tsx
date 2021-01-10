@@ -6,7 +6,7 @@ import { mapCharacterFromApiToVm } from './character.mappers';
 import { HotelComponent } from './character.component';
 
 export const CharacterContainer: React.FunctionComponent = (props) => {
-  const [hotel, setHotel] = React.useState<Character>(createEmptyCharacter());
+  const [character, setHotel] = React.useState<Character>(createEmptyCharacter());
   const { id } = useParams();
   const history = useHistory();
 
@@ -30,10 +30,5 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
       alert('Error on save hotel');
     }
   };
-  return (
-    <>
-      <h1>sadasd - {id}</h1>
-    </>
-  );
-  /*   return <HotelComponent hotel={hotel} onSave={handleSave} />; */
+  return <HotelComponent character={character} />;
 };
