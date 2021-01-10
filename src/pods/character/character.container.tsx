@@ -11,9 +11,8 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
   const history = useHistory();
 
   const handleLoadHotel = async () => {
-    const apiHotel = await api.getCharacter(id);
-    console.log(await api.getCharacter(id));
-    setHotel(mapCharacterFromApiToVm(apiHotel));
+    const apiCharacter = await api.getCharacter(id);
+    setHotel(mapCharacterFromApiToVm(apiCharacter));
   };
 
   React.useEffect(() => {
@@ -33,7 +32,7 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
   };
   return (
     <>
-      <h1>sadasd</h1>
+      <h1>sadasd - {id}</h1>
     </>
   );
   /*   return <HotelComponent hotel={hotel} onSave={handleSave} />; */
