@@ -1,19 +1,19 @@
 import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import * as api from './api';
-import { Character } from './character.vm';
+import { Character, createEmptyCharacter } from './character.vm';
 import { mapCharacterFromApiToVm } from './character.mappers';
 import { HotelComponent } from './character.component';
 
 export const CharacterContainer: React.FunctionComponent = (props) => {
-  const [hotel, setHotel] = React.useState<Hotel>(createEmptyHotel());
+  const [hotel, setHotel] = React.useState<Character>(createEmptyCharacter());
   const { id } = useParams();
   const history = useHistory();
 
   const handleLoadHotel = async () => {
-    console.log('---------handleLoadHotel');
-    const apiHotel = await api.getHotel(id);
-    setHotel(mapHotelFromApiToVm(apiHotel));
+    const apiHotel = await api.getCharacter(id);
+    console.log(await api.getCharacter(id));
+    setHotel(mapCharacterFromApiToVm(apiHotel));
   };
 
   React.useEffect(() => {
@@ -31,7 +31,10 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
       alert('Error on save hotel');
     }
   };
-
-  return <HotelComponent hotel={hotel} onSave={handleSave} />;
+  return (
+    <>
+      <h1>sadasd</h1>
+    </>
+  );
+  /*   return <HotelComponent hotel={hotel} onSave={handleSave} />; */
 };
-
