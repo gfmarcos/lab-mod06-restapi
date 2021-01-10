@@ -14,20 +14,15 @@ import * as classes from './character-card.styles';
 
 interface Props {
   character: CharacterEntityVm;
-  onEdit: (id: string) => void;
-  onDelete: (id: string) => void;
   onView: (id: string) => void;
 }
 
 export const CharacterCard: React.FunctionComponent<Props> = (props) => {
-  const { character, onEdit, onDelete, onView } = props;
+  const { character, onView } = props;
 
   return (
     <Card>
-      <CardHeader
-        title={character.name}
-        subheader={character.gender}
-      />
+      <CardHeader title={character.name} subheader={character.gender} />
       <CardContent>
         <div className={classes.content}>
           <CardMedia
@@ -38,15 +33,9 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
         </div>
       </CardContent>
       <CardActions>
-      <IconButton onClick={() => onView(character.id)}>
+        <IconButton onClick={() => onView(character.id)}>
           <VisibilityIcon />
         </IconButton>
-        <IconButton onClick={() => onEdit(character.id)}>
-          <EditIcon />
-        </IconButton>
-{/*         <IconButton onClick={() => onDelete(hotel.id)}>
-          <DeleteIcon />
-        </IconButton> */}
       </CardActions>
     </Card>
   );

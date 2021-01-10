@@ -1,17 +1,9 @@
-export interface Hotel {
+export interface Character {
   id: string;
   name: string;
-  description: string;
-  rating: number;
-  address: string;
-  city: string;
+  status: string;
+  species: string;
+  type: string;
+  gender: string;
+  image: string;
 }
-
-export const createEmptyHotel = (): Hotel => ({
-  id: '',
-  name: '',
-  description: '',
-  rating: 3,
-  address: '',
-  city: '',
-});

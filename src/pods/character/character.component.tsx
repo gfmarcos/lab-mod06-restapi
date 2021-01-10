@@ -15,24 +15,22 @@ import IconButton from '@material-ui/core/IconButton';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import Typography from '@material-ui/core/Typography';
 import { formValidation } from './character.validations';
-import { Hotel } from './character.vm';
+import { Character } from './character.vm';
 import * as classes from './character.styles';
 import { Lookup } from 'common/models';
 
 interface Props {
-  hotel: Hotel;
-  cities: Lookup[];
-  onSave: (hotel: Hotel) => void;
+  character: Character;
 }
 
 export const HotelComponent: React.FunctionComponent<Props> = (props) => {
-  const { hotel, cities, onSave } = props;
+  const { character } = props;
 
   return (
     <>
       <Card className={classes.root}>
         <CardHeader
-          title={hotel.name}
+          title={character.name}
           subheader="September 14, 2016"
         />
         <CardMedia
@@ -53,7 +51,7 @@ export const HotelComponent: React.FunctionComponent<Props> = (props) => {
         </CardActions>
       </Card>
 
-      <Formik
+      {/* <Formik
         onSubmit={onSave}
         initialValues={hotel}
         enableReinitialize={true}
@@ -77,7 +75,7 @@ export const HotelComponent: React.FunctionComponent<Props> = (props) => {
             </Button>
           </Form>
         )}
-      </Formik>
+      </Formik> */}
     </>
   );
 };
