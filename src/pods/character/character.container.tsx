@@ -36,5 +36,5 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
       alert('Error on save hotel');
     }
   };
-  return <HotelComponent character={character} />;
+  return <HotelComponent character={character} onBack={handleBack}/>;
 };
