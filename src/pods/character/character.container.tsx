@@ -11,6 +11,7 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
   const history = useHistory();
 
   const handleLoadHotel = async () => {
+    console.log('---------handleLoadHotel');
     const apiHotel = await api.getHotel(id);
     setHotel(mapHotelFromApiToVm(apiHotel));
   };
@@ -33,3 +34,4 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
 
   return <HotelComponent hotel={hotel} onSave={handleSave} />;
 };
+
