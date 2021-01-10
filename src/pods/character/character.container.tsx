@@ -6,14 +6,20 @@ import { mapCharacterFromApiToVm } from './character.mappers';
 import { HotelComponent } from './character.component';
 
 export const CharacterContainer: React.FunctionComponent = (props) => {
-  const [character, setHotel] = React.useState<Character>(createEmptyCharacter());
+  const [character, setCharacter] = React.useState<Character>(
+    createEmptyCharacter()
+  );
   const { id } = useParams();
   const history = useHistory();
 
   const handleLoadHotel = async () => {
     const apiCharacter = await api.getCharacter(id);
-    setHotel(mapCharacterFromApiToVm(apiCharacter));
+    setCharacter(mapCharacterFromApiToVm(apiCharacter));
   };
+
+  const handleBack = () => {
+    history.goBack();
+  }
 
   React.useEffect(() => {
     if (id) {

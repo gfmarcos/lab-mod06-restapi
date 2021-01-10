@@ -10,7 +10,7 @@ export interface Character {
 
 export const createEmptyCharacter = (): Character => ({
   id: '',
-  name: 'Eeeeee',
+  name: '',
   status: '',
   species: '',
   type: '',
