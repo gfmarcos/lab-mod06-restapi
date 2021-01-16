@@ -19,7 +19,7 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
 
   const handleBack = () => {
     history.goBack();
-  }
+  };
 
   React.useEffect(() => {
     if (id) {
@@ -36,5 +36,5 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
       alert('Error on save hotel');
     }
   };
-  return <HotelComponent character={character} onBack={handleBack}/>;
+  return <HotelComponent character={character} onBack={handleBack} />;
 };

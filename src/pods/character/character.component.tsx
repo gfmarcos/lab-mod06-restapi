@@ -21,23 +21,21 @@ import { Lookup } from 'common/models';
 
 interface Props {
   character: Character;
+  onBack: () => void;
 }
 
 export const HotelComponent: React.FunctionComponent<Props> = (props) => {
-  const { character } = props;
+  const { character, onBack } = props;
 
-  console.log("**********");
-  console.log(character)
+  console.log('**********');
+  console.log(character);
 
   return (
     <>
       <Card className={classes.root}>
-        <CardHeader
-          title={character.name}
-          subheader={character.gender}
-        />
+        <CardHeader title={character.image} subheader={character.gender} />
         <CardMedia
-          image="/static/images/cards/paella.jpg"
+          image="https://rickandmortyapi.com/api/character/avatar/2.jpeg"
           title="Paella dish"
         />
         <CardContent>
@@ -48,7 +46,7 @@ export const HotelComponent: React.FunctionComponent<Props> = (props) => {
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
+          <IconButton aria-label="add to favorites" onClick={onBack}>
             <NavigateBeforeIcon />
           </IconButton>
         </CardActions>
