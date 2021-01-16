@@ -21,7 +21,7 @@ export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
       </Button> */}
 
       <Typography variant="h4" component="h1">
-        Ejercicio 2 - Mock data, Server
+        Ejercicio 2 - Mock Server
       </Typography>
 
       <ul className={classes.list}>
