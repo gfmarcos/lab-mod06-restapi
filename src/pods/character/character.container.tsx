@@ -3,7 +3,8 @@ import { useParams, useHistory } from 'react-router-dom';
 import * as api from './api';
 import { Character, createEmptyCharacter } from './character.vm';
 import { mapCharacterFromApiToVm } from './character.mappers';
-import { HotelComponent } from './character.component';
+import { CharacterComponent } from './character.component';
+import Container from '@material-ui/core/Container';
 
 export const CharacterContainer: React.FunctionComponent = (props) => {
   const [character, setCharacter] = React.useState<Character>(
@@ -12,7 +13,7 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
   const { id } = useParams();
   const history = useHistory();
 
-  const handleLoadHotel = async () => {
+  const handleLoadCharacter = async () => {
     const apiCharacter = await api.getCharacter(id);
     setCharacter(mapCharacterFromApiToVm(apiCharacter));
   };
@@ -23,18 +24,13 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
 
   React.useEffect(() => {
     if (id) {
-      handleLoadHotel();
+      handleLoadCharacter();
     }
   }, []);
 
-  const handleSave = async (hotel: Hotel) => {
-    const apiHotel = mapHotelFromVmToApi(hotel);
-    const success = await api.saveHotel(apiHotel);
-    if (success) {
-      history.goBack();
-    } else {
-      alert('Error on save hotel');
-    }
-  };
-  return <HotelComponent character={character} onBack={handleBack} />;
+  return (
+    <Container maxWidth="sm">
+      <CharacterComponent character={character} onBack={handleBack} />
+    </Container>
+  );
 };
