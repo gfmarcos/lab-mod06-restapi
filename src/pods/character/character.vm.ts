@@ -5,6 +5,7 @@ export interface Character {
   species: string;
   type: string;
   gender: string;
+  description: string;
   image: string;
 }
 
@@ -15,5 +16,6 @@ export const createEmptyCharacter = (): Character => ({
   species: '',
   type: '',
   gender: '',
+  description: '',
   image: '',
 });
