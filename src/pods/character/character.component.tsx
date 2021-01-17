@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Formik, Form } from 'formik';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -30,7 +30,10 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
         title={character.name}
         style={{ height: 0, paddingTop: '50%' }}
       />
-      <CardContent>
+      <Formik onSubmit={} initialValues={character}>
+        <Form></Form>
+      </Formik>
+      <CardContent>∫
         <Typography variant="body2" color="textSecondary" component="p">
           {character.description}
         </Typography>
