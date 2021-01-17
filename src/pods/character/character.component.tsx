@@ -1,23 +1,21 @@
 import React from 'react';
 import { Formik, Form } from 'formik';
+import { TextFieldComponent } from 'common/components';
+import { Button } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-import CardActions from '@material-ui/core/CardActions';
-import IconButton from '@material-ui/core/IconButton';
-import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import { Character } from './character.vm';
 import * as classes from './character.styles';
 
 interface Props {
   character: Character;
-  onBack: () => void;
+  onSave: (character: Character) => void;
 }
 
 export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
-  const { character, onBack } = props;
+  const { character, onSave } = props;
 
   return (
     <Card className={classes.root}>
@@ -30,19 +28,28 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
         title={character.name}
         style={{ height: 0, paddingTop: '50%' }}
       />
-      <Formik onSubmit={} initialValues={character}>
-        <Form></Form>
-      </Formik>
-      <CardContent>∫
-        <Typography variant="body2" color="textSecondary" component="p">
-          {character.description}
-        </Typography>
+      <CardContent>
+        <Formik
+          onSubmit={onSave}
+          initialValues={character}
+          enableReinitialize={true}
+        >
+          {() => (
+            <Form className={classes.root}>
+              <TextFieldComponent
+                name="description"
+                label="Edit description"
+                multiline={true}
+                rows={3}
+                rowsMax={5}
+              />
+              <Button type="submit" variant="contained" color="primary">
+                Save
+              </Button>
+            </Form>
+          )}
+        </Formik>
       </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="Back" onClick={onBack}>
-          <NavigateBeforeIcon />
-        </IconButton>
-      </CardActions>
     </Card>
   );
 };

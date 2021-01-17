@@ -17,5 +17,5 @@ export const createEmptyCharacter = (): Character => ({
   type: '',
   gender: '',
   description: '',
-  image: '',
+  image: 'https://via.placeholder.com/460'
 });

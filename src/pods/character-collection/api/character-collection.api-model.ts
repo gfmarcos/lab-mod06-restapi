@@ -5,6 +5,7 @@ export interface CharacterEntityApi {
   species: string;
   type: string;
   gender: string;
+  description: string;
   origin: {
     name: string;
     url: string;

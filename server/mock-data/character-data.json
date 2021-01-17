@@ -4,10 +4,10 @@
       "id": 1,
       "name": "Rick Sanchez - Mock",
       "status": "Alive",
-      "species": "Human",
-      "type": "",
+      "species": "Alive",
+      "type": "Alive",
       "gender": "Male",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec est ac lacus finibus varius. Sed dapibus et sapien non fringilla. In sit amet hendrerit ex, vel dignissim ex. Fusce ornare fringilla mauris a hendrerit. Ut maximus sapien mollis massa finibus, mollis vulputate magna malesuada. Aenean non purus augue. Sed mollis sapien non eros pharetra, ultrices semper libero auctor. Morbi ac egestas nulla. Vestibulum eget ullamcorper felis. Nulla vel nisi fringilla, laoreet nulla non, fringilla elit. Quisque fringilla mi nec felis placerat convallis.",
+      "description": "s",
       "origin": {
         "name": "Earth (C-137)",
         "url": "https://rickandmortyapi.com/api/location/1"
@@ -67,10 +67,10 @@
       "id": 2,
       "name": "Morty Smith - Mock",
       "status": "Alive",
-      "species": "Human",
-      "type": "",
+      "species": "Alive",
+      "type": "Alive",
       "gender": "Male",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "description": "ajhdgajshdasd",
       "origin": {
         "name": "Earth (C-137)",
         "url": "https://rickandmortyapi.com/api/location/1"
@@ -130,10 +130,10 @@
       "id": 3,
       "name": "Summer Smith - Mock",
       "status": "Alive",
-      "species": "Human",
-      "type": "",
+      "species": "Alive",
+      "type": "Alive",
       "gender": "Female",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "description": "Que pasa adjalksdjasd",
       "origin": {
         "name": "Earth (Replacement Dimension)",
         "url": "https://rickandmortyapi.com/api/location/20"

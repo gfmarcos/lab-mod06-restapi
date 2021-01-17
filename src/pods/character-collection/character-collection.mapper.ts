@@ -7,5 +7,6 @@ export const mapFromApiToVm = (
   id: character.id,
   name: character.name,
   gender: character.gender,
+  description: character.description,
   image: character.image,
 });
