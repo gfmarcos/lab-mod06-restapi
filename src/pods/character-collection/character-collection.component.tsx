@@ -16,9 +16,6 @@ export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
 
   return (
     <div className={classes.root}>
-      {/*<Button variant="contained" color="primary" onClick={onCreateHotel}>
-        Add hotel
-      </Button> */}
 
       <Typography variant="h4" component="h1">
         Ejercicio 1 - API Rest de Rick and Morty
