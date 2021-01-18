@@ -7,7 +7,7 @@
       "species": "Alive",
       "type": "Alive",
       "gender": "Male",
-      "description": "s",
+      "description": "Editar descripción",
       "origin": {
         "name": "Earth (C-137)",
         "url": "https://rickandmortyapi.com/api/location/1"
@@ -70,7 +70,7 @@
       "species": "Alive",
       "type": "Alive",
       "gender": "Male",
-      "description": "ajhdgajshdasd",
+      "description": "Nueva",
       "origin": {
         "name": "Earth (C-137)",
         "url": "https://rickandmortyapi.com/api/location/1"
@@ -133,7 +133,7 @@
       "species": "Alive",
       "type": "Alive",
       "gender": "Female",
-      "description": "Que pasa adjalksdjasd",
+      "description": "Otra descripción",
       "origin": {
         "name": "Earth (Replacement Dimension)",
         "url": "https://rickandmortyapi.com/api/location/20"
